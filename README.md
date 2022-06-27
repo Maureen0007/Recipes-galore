@@ -4,162 +4,78 @@ Tasty Food Recipies is open for business! You are starting! This website display
 
 Use this gif as an example of how the app should work.
 
-![Flatdango App Demo]()
+![Tasty foods app Demo]()
 
 > To view in VSCode, right click on the README.md file and select "Open Preview".
 
 ## Setup
 
-Run this command to get the backend started:
 
-```console
-$
-```
 
-Test your server by visiting this route in the browser:
-
-[http://localhost:3000/films](http://localhost:3000/films)
-
-Then, open the `index.html` file on your browser to run the application.
-
-Write your code in the `src/index.js` file. The base URL for your API will be
-[http://localhost:3000](http://localhost:3000).
+ The base URL for your API will be
+  [https://www.themealdb.com/api/json/v1/1/]
 
 ## Core Deliverables
 
 As a user, I can:
 
-1. See the first movie's details, including its **poster, title, runtime,
-   showtime, and available tickets** when the page loads. The number of
-   available tickets will need to be derived by subtracting the number of
-   `tickets_sold` from the theater's `capacity`. You will need to make a GET
+1. search for any meal available on the website by the meal name.
    request to the following endpoint to retrieve the film data:
 
    ```txt
-   GET /films/1
+   GET /meals/
 
    Example Response:
    {
-     "id": "1",
-     "title": "The Giant Gila Monster",
-     "runtime": "108",
-     "capacity": 30,
-     "showtime": "04:00PM",
-     "tickets_sold": 27,
-     "description": "A giant lizard terrorizes a rural Texas community and a heroic teenager attempts to destroy the creature.",
-     "poster": "https://www.gstatic.com/tv/thumb/v22vodart/2157/p2157_v_v8_ab.jpg"
-   }
+    "meals": [
+     {
+      "strMeal": "Chick-Fil-A Sandwich",
+      "strMealThumb": "https://www.themealdb.com/images/media/meals/sbx7n71587673021.jpg",
+      "idMeal": "53016"
+       }
+      ]
+    }
+   
+   
    ```
 
-2. See a menu of all movies on the left side of the page in the `ul#films`
-   element when the page loads. (_optional_: you can style each film in the list
-   by adding the classes `film item` to each `li` element.) There is a
-   placeholder `li` in the `ul#films` element that is hardcoded in the HTML —
-   feel free to remove that element by editing the HTML file directly, or use
-   JavaScript to remove the placeholder element before populating the list. You
-   will need to make a GET request to the following endpoint to retrieve the
-   film data:
+2. Get the recipe off different meals by clicking the "Get Recipe" button.
 
    ```txt
    GET /films
 
    Example response:
-   [
-      {
-        "id": "1",
-        "title": "The Giant Gila Monster",
-        "runtime": "108",
-        "capacity": 30,
-        "showtime": "04:00PM",
-        "tickets_sold": 27,
-        "description": "A giant lizard terrorizes a rural Texas community and a heroic teenager attempts to destroy the creature.",
-        "poster": "https://www.gstatic.com/tv/thumb/v22vodart/2157/p2157_v_v8_ab.jpg"
-      },
-      {
-        "id": "2",
-        "title": "Manos: The Hands Of Fate",
-        "runtime": "118",
-        "capacity": 50,
-        "showtime": "06:45PM",
-        "tickets_sold": 44,
-        "description": "A family gets lost on the road and stumbles upon a hidden, underground, devil-worshiping cult led by the fearsome Master and his servant Torgo.",
-        "poster": "https://www.gstatic.com/tv/thumb/v22vodart/47781/p47781_v_v8_ac.jpg"
-      }
+   {
+  "meals": [
+   {
+   "idMeal": "52771",
+   "strMeal": "Spicy Arrabiata Penne",
+   "strDrinkAlternate": null,
+   "strCategory": "Vegetarian",
+   "strArea": "Italian",
+   "strInstructions": "Bring a large pot of water to a boil. Add kosher salt to the boiling water, then add the pasta. Cook according to the package instructions, about 9 minutes.\r\nIn a large skillet over medium-high heat, add the olive oil and heat until the oil starts to shimmer. Add the garlic and cook, stirring, until fragrant, 1 to 2 minutes. Add the chopped tomatoes, red chile flakes, Italian seasoning and salt and pepper to taste. Bring to a boil and cook for 5 minutes. Remove from the heat and add the chopped basil.\r\nDrain the pasta and add it to the sauce. Garnish with Parmigiano-Reggiano flakes and more basil and serve warm.",
+   "strMealThumb": "https://www.themealdb.com/images/media/meals/ustsqw1468250014.jpg",
+   "strTags": "Pasta,Curry",
+   "strIngredient1": "penne rigate",
+   "strIngredient2": "olive oil",
+   "strIngredient3": "garlic",
+   "strIngredient4": "chopped tomatoes",
+   "strIngredient5": "red chile flakes",
+   "strIngredient6": "italian seasoning",
+   "strIngredient7": "basil",
+   "strIngredient8": "Parmigiano-Reggiano",
+   "strMeasure1": "1 pound",
+   "strMeasure2": "1/4 cup",
+   "strMeasure3": "3 cloves",
+   "strMeasure4": "1 tin ",
+   "strMeasure5": "1/2 teaspoon",
+   "strMeasure6": "1/2 teaspoon",
+   "strMeasure7": "6 leaves",
+   "strMeasure8": "spinkling",
+    }
    ]
    ```
 
-3. Buy a ticket for a movie. After clicking the "Buy Ticket" button, I should
-   see the number of available tickets decreasing on the frontend. I should not
-   be able to buy a ticket if the showing is sold out (if there are 0 tickets
-   available). **No persistence is needed for this feature**.
-
 ### Bonus Deliverables
+ In a more advanced version, the user will e able to add personal recipies to the website, like and leave a comment in different the recipes and also be able to delete items.
 
-These bonus deliverables are here if you want an extra challenge and won't
-affect your score. **Make sure to commit your work to save your progress before
-attempting the bonus deliverables!**
-
-1. Click on a movie in the menu to replace the currently displayed movie's
-   details with the new movie's details. Note that you may have to make an
-   additional GET request to access the movie's details.
-
-2. When a movie is sold out (when there are no available tickets remaining),
-   indicate that the movie is sold out by changing the button text to "Sold
-   Out". Also update the film item in the `ul#films` menu by adding a class of
-   `sold-out` to the film. For reference, here's what the contents of the
-   `ul#films` element should look like with a sold out film:
-
-   ```html
-   <li class="film item">(Title of film)</li>
-   <li class="sold-out film item">(Title of a sold-out film)</li>
-   <li class="film item">(Title of film)</div>
-   ```
-
-## Extra Bonus
-
-These extra bonus deliverables involve using `fetch` to update data on the
-`json-server` backend by using `POST`, `PATCH`, and `DELETE` requests. These are
-meant for an extra, extra challenge and won't affect your grade. **Make sure to
-commit your work to save your progress before attempting the extra bonus
-deliverables!**
-
-1. When a ticket is purchased, persist the updated number of `tickets_sold` on
-   the server. Remember, the frontend shows the number of available tickets
-   based on the `tickets_sold` and the `capacity`, so only the `tickets_sold`
-   should be updated on the backend when a ticket is purchased. You will need to
-   make a request that follows this structure:
-
-   ```txt
-   PATCH /films/:id
-
-   Request Headers: {
-     Content-Type: application/json
-   }
-
-   Request Body: {
-     "tickets_sold": 28
-   }
-   ----
-   Example Response:
-   {
-      "id": "1",
-      "title": "The Giant Gila Monster",
-      "runtime": "108",
-      "capacity": 30,
-      "showtime": "04:00PM",
-      "tickets_sold": 28,
-      "description": "A giant lizard terrorizes a rural Texas community and a heroic teenager attempts to destroy the creature.",
-      "poster": "https://www.gstatic.com/tv/thumb/v22vodart/2157/p2157_v_v8_ab.jpg"
-   }
-   ```
-
-2. Delete a film from the server. Add a delete button next to each film in the
-   `ul#films` menu. When the button is clicked, remove the film from the list
-   and also delete the film on the server:
-
-   ```txt
-   DELETE /films/:id
-
-   Example Response:
-   {}
-   ```
