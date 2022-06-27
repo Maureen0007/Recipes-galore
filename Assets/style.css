@@ -23,6 +23,9 @@ body{
     display: flex;
     justify-content: space-between;
     height: 100px;
+    background-color: black;
+    border-radius: 10px;
+    margin: 2rem;
 }
 ul li {
     display: inline-block;
@@ -30,7 +33,7 @@ ul li {
 }
 ul li a {
     text-decoration: none;
-    color: black;
+    color: orange;
     font-size: 1.2rem;
     -webkit-transition: color 300ms, background-color 300ms;
     -moz-transition: color 300ms, background-color 300ms;
@@ -38,12 +41,12 @@ ul li a {
     transition:  color 300ms, background-color 300ms;
 }
 ul li a:hover, a:focus{
-        color: orange;
+        color: white;
       
 }
 .container{
-    height: max-content;
-    background-color: orange;
+    width: 95%;
+    margin: 3rem;
 }
 .meal-container{
     margin: 0 auto;
@@ -58,7 +61,6 @@ ul li a:hover, a:focus{
 .search-box cite{
     font-size: 1.5rem;
     font-weight: 100;
-    color: white;
     font-size: 1.0 rem;
 }
 .search-bar{
@@ -74,19 +76,19 @@ ul li a:hover, a:focus{
 }
 
 .search-meal{
-    border:1px solid rgb(29, 29, 146);
-    color: rgb(29, 29, 146);
+    border:1px solid orange;
+    color: orange;
     border-bottom-left-radius: 10px;
     border-top-left-radius: 10px;
     outline: 0;
     padding: 0 1rem;
 }
 .search-meal ::placeholder{
-    color: rgb(29, 29, 146);
+    color: orange;
 }
 .search-button{
     width: 50px;
-    background-color: rgb(29, 29, 146);
+    background-color: orange;
     color: white;
     border: none;
     border-top-right-radius: 10px;
@@ -100,7 +102,7 @@ ul li a:hover, a:focus{
 }
 .mealItem{
     border-radius: 2rem;
-    margin: 3rem 0;
+    margin: 1rem 0;
     overflow: hidden;
 }
 .food-image{
@@ -115,20 +117,20 @@ ul li a:hover, a:focus{
 .food-name h3{
     font-size: 2.0rem;
     padding-bottom: 20px;
-    color: white;
+    color: black;
 }
 .food-image img{
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
 }
 .recipe-button{
-    background-color: rgb(29, 29, 146);
+    background-color: orange;
     color: white;
     text-decoration: none;
     padding: 10px;
     margin: 1rem auto;
     border-radius: 18px;
-    width: 150px;
+
 }
 
 @media  screen and (min-width){
@@ -145,26 +147,27 @@ ul li a:hover, a:focus{
     gap: 3rem;
     
 }
-.hero-heading h2{
-    padding: 3rem;
-    color: orange;
-    font-size: 2rem;
-    text-align: center;
-}
 .hero{
     display: flex;
     justify-content: space-between;
     margin: 3rem;
+    width: 95%;
+    
 }
 .hero-text{
     width: 50%;
+    margin: 2rem;
+    line-height: 2.0rem;
 
+}
+.hero-text h2{
+    text-align: center;
 }
 
 .social-icons a i{
     margin: 2rem;
     padding: 20px;
-    color: black;
+    color: white;
     width: 50%;
     display: flex;
     
@@ -176,5 +179,31 @@ ul li a:hover, a:focus{
 .footer-contents{
     display: flex;
     justify-content: space-between;
+    width: 100%;
+    background-color: black;
 }
-
+.home{
+    display: flex;
+    justify-content: space-between;
+    margin: 3rem;
+    gap: 2rem;
+    background-color: orange;
+    width: 95%;
+}
+.home-text{
+    width: 50%;
+    color: black;
+    align-items: center;
+    margin: 3rem;
+}
+#title1{
+    padding: 1rem;
+}
+#title2{
+    text-align: center;
+}
+.line{
+    width: 70%;
+    margin: 3rem;
+    margin-left: 10%;
+}
