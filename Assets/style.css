@@ -211,14 +211,14 @@ ul li a:hover, a:focus{
     margin: 3rem;
     margin-left: 10%;
 }
-.recipes{
+.recipe{
     width: 500px;
     height: 500px;
     background-color: orange;
     border-radius: 100%;
     margin: 3rem;
     color: white;
-    display: none;
+    ;
     
    
 }
